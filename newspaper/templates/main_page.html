@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1 style="text-align: center;">Articles</h1>
+    {% for post in posts %}
+        <div class="article">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text }}</p>
+            <p>Published on: {{ post.publish_date }}</p>
+        </div>
+    {% endfor %}
+    <button id="fakeButton">НАЖМИ!</button>
+
+    <script>
+        document.getElementById("fakeButton").addEventListener("click", function() {
+            alert("Времени нет, кнопка - обман");
+        });
+    </script>
+
+
+</body>
+</html>
